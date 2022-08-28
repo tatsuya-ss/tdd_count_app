@@ -23,7 +23,7 @@ class CountViewModel(
     fun fetchTotalUnreadCount() {
         viewModelScope.launch {
             val unreadCount = fetchTotalUnreadCountUseCase.invoke()
-            _totalUnreadCount.value = unreadCount.fromUserCount + unreadCount.fromSystemCount
+            _totalUnreadCount.value = unreadCount.totalCount
         }
     }
 }
